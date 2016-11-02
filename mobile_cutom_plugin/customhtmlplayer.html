@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Custom HTML5 Video Controls with jQuery</title>
+<link rel="stylesheet" href="customvideo/css/vendorstyle.css" />
+<link rel="stylesheet" href="customvideo/css/style.css" />
+<script type="text/javascript" src="customvideo/js/jquery-1.7.min.js"></script>
+<script src="customvideo/js/vendorscript.js"></script>
+<script src="customvideo/js/video.js"></script>
+<script src="customvideo/js/touchswipe.js"></script>
+</head>
+<body>
+	<div class="videoContainer" id="videoContainer">
+		<video id="myVideo" preload="auto" poster="customvideo/img/poster.jpg"
+			width="100%" height="100%" webkit-playsinline>
+			<source src="testvideo.mp4" type="video/mp4" />
+			<p>Your browser does not support the video tag.</p>
+		</video>
+		<div class="control">
+			<div class="topControl">
+				<div class="progress" id="progress">
+					<span class="bufferBar"></span> <span class="timeBar"></span> <span
+						class="startpoint" style="display:none;"></span> <span
+						class="endpoint" style="display:none;"></span>
+				</div>
+				<div class="time">
+					<span class="current"></span> / <span class="duration"></span>
+				</div>
+			</div>
+			<div class="btmControl">
+				<div class="btnPlay btn" title="Play/Pause video"></div>
+				<div class="btnStop btn" title="Stop video"></div>
+				<div class="btnx1 btn jin"></div>
+				<div class="btnx3 btn tui"></div>
+				<div class="btnFS btn" title="Switch to full screen"></div>
+			</div>
+			<div class="btmControlPoint" id="btmControlPoint">
+				<div class="btnx3 btn save" id="inoutpoint"></div>
+				<div class="palyerLeft palyerLeft btn" id="palyerRight"></div>
+				<div class="palyerLeft palyerRight btn" id="palyerLeft"></div>
+				<div class="palyerLeftValue">00:00:00:00</div>
+				<div class="palyerRightValue">00:00:00:00</div>
+			</div>
+		</div>
+
+		<div class="volume" title="Set volume">
+			<span class="volumeBar"></span>
+		</div>
+		<div class="quickforwad">
+			<div align="center" id="playtime">
+				<img id="forwardbackicon" src=""
+					width="60px;" height="50px;" />
+			</div>
+			<div align="center">
+				<font class="inpoint">00:00:00:00</font> <font class="outpoint">/00:00:00:00</font>
+			</div>
+		</div>
+		<div class="loading"></div>
+	</div>
+
+	<!-- 该元素为测试功能，使用插件时可以删除--  开始         -->
+	<div style="margin-top:10px;">
+		<div style="float:left;">
+			<button id="fixed" style="width:80px;float:left;">固定</button>
+		</div>
+		<div style="float:left;">
+			<button id="nofixed" style="width:80px;float:left;">浮动</button>
+		</div>
+		<div style="float:left;">
+			<button id="haspoint" style="width:80px;float:left;">有打点</button>
+		</div>
+		<div style="float:left;">
+			<button id="nopoint" style="width:80px;float:left;">无打点</button>
+		</div>
+		<div style="float:left;">
+			<button id="refresh" style="width:80px;float:left;">刷新</button>
+		</div>
+	</div>
+	<!-- 该元素为测试功能，使用插件时可以删除--  结束         -->
+</body>
+</html>
