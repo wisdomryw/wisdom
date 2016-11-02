@@ -1,0 +1,42 @@
+<!--该页面是上传插件的测试页面-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="utf-8">
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <title>Http Upload Plugin</title>
+</head>
+<body>
+<div id="httpupoad">
+</div>
+<div id="getUploadTask"></div>
+</br>
+<div id="buttonDiv" style="clear:both;">
+<input type="button" id="isFinishedAllTasks" style="width: 140px;height: 40px;" value="获取任务上传状态"/>
+<input type="button" id="getUploadTasksDetail" style="width: 140px;height: 40px;"  value="获取任务详细信息"/>
+</div>
+<div id="resultDiv" style="clear:both;">
+</div>
+
+<script type="text/javascript" charset="utf-8" src="dyhttpupload/js/jquery-1.7.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="dyhttpupload/js/json2.js"></script>
+<script type="text/javascript" charset="utf-8" src="dyhttpupload/js/chunkupload-1.0.1.min.js"></script>
+<script type="text/javascript">
+var plugin = $("#httpupoad").httpUploadPlugin({
+    "uploadAddress": "http://100.0.1.211:80/upload/",
+    "retryMigrateAddress": "http://100.0.1.211:8080/DYCMigrate/rs/retryMigrate",
+    "chunkSize": 10 * 1024 * 1024,
+    "fileSavePath": "/tmp/upload_set/123",
+    "isRename":true
+});
+    $("#isFinishedAllTasks").click(function() {
+       var result = JSON.stringify(plugin.isFinishedAllTasks());
+        $("#resultDiv").append(result+"</br>");
+    });
+
+  $("#getUploadTasksDetail").click(function() {
+      var result = JSON.stringify(plugin.getUploadTasksDetail());
+      $("#resultDiv").append(result+"</br>");
+  });
+</script>
+</body>
+</html>
