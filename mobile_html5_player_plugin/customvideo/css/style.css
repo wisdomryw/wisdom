@@ -1,0 +1,309 @@
+/* video container */
+.rotation {
+transform: rotate(90deg);
+-o-transform: rotate(90deg);
+-webkit-transform: rotate(90deg);
+-moz-transform: rotate(90deg);
+filter:progid:DXImageTransform.Microsoft.BasicImage(Rotation=1);
+}
+
+.videoContainer{
+	width:96%;
+	height:50%;
+	left:2%;
+	top:25%;
+	position:absolute;
+	overflow:hidden;
+	background:#000;
+	color:#ccc;
+}
+
+.fixedvideoContainer{
+	width:96%;
+	height:50%;
+	left:2%;
+	top:25%;
+	position:absolute;
+	background:#000;
+	color:#ccc;
+}
+/* video caption css */
+.caption{
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	padding:10px;
+	color:#f4f4f4;
+	font-size:20px;
+	font-weight:bold;
+	box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background:url(../img/bg.png)
+}
+
+/*** VIDEO CONTROLS CSS ***/
+/* control holder */
+.control{
+	background:url(../img/bg.png);
+	color:#ccc;
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	z-index:5;
+	display:none;
+}
+/* control top part */
+.topControl{
+	height:11px;
+	border-bottom:1px solid #404040;
+	padding:1px 5px;
+	background:#1F1F1F; /* fallback */
+	background:-moz-linear-gradient(top,#242424 50%,#1F1F1F 50%,#171717 100%);
+	background:-webkit-linear-gradient(top,#242424 50%,#1F1F1F 50%,#171717 100%);
+	background:-o-linear-gradient(top,#242424 50%,#1F1F1F 50%,#171717 100%);
+}
+/* control bottom part */
+.btmControl{
+	clear:both;
+	background:url(../img/bg.png);
+}
+.btmControlPoint{
+	clear:both;
+	display:block;
+	background:url(../img/bg.png);
+}
+.control div.btn {
+	float:left;
+	width:34px;
+	height:30px;
+	padding:0 5px;
+	cursor:pointer;
+}
+.control div.text{
+	font-size:12px;
+	font-weight:bold;
+	line-height:30px;
+	text-align:center;
+	font-family:verdana;
+	width:20px;
+	border:none;
+	color:#777;
+}
+.control div.btnPlay{
+	background:url(../img/control.png) no-repeat 0 0;
+}
+.control div.paused{
+	background:url(../img/control.png) no-repeat 0 -30px;
+}
+.control div.btnStop{
+	background:url(../img/control.png) no-repeat 0 -60px;
+}
+.control div.spdText{
+	border:none;
+	font-size:14px;
+	line-height:30px;
+	font-style:italic;
+}
+.control div.selected{
+	font-size:15px;
+	color:#ccc;
+}
+.control div.tui{
+	background:url(../img/control.png) no-repeat -120px  0px ;
+}
+.control div.jin{
+	background:url(../img/control.png) no-repeat -120px  -30px ;
+}
+.control div.save{
+	background:url(../img/control.png) no-repeat -120px  -60px ;
+	float:right;
+}
+.control div.sound{
+	background:url(../img/control.png) no-repeat -88px -30px;
+	border:none;
+	float:right;
+}
+.control div.sound2{
+	background:url(../img/control.png) no-repeat -88px -60px !important;
+}
+.control div.muted{
+	background:url(../img/control.png) no-repeat -88px 0 !important;
+}
+.control div.btnFS{
+	background:url(../img/control.png) no-repeat -44px 0;
+	float:right;
+}
+.control div.palyerLeftValue{
+	background:url(../img/control.png) no-repeat 0 -100px;
+	float:left;
+	margin-top:5px;
+	margin-left:7px;
+}
+.control div.palyerRightValue{
+	background:url(../img/control.png) no-repeat 0 -100px;
+	float:left;
+	margin-top:5px;
+	margin-left:10px;
+}
+.control div.palyerLeft{
+	background:url(../img/control.png) no-repeat -44px -60px;
+	float:right;
+}
+.control div.palyerRight{
+	background:url(../img/control.png) no-repeat -44px -30px !important;
+}
+
+/* PROGRESS BAR CSS */
+/* Progress bar */
+.progress {
+	width:75%;
+	height:10px;
+	position:relative;
+	float:left;
+	cursor:pointer;
+	background: #444; /* fallback */
+	background:-moz-linear-gradient(top,#666,#333);
+	background:-webkit-linear-gradient(top,#666,#333);
+	background:-o-linear-gradient(top,#666,#333);
+	box-shadow:0 2px 3px #333 inset;
+	-moz-box-shadow:0 2px 3px #333 inset;
+	-webkit-box-shadow:0 2px 3px #333 inset;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+.progress span {
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+.timeBar{
+	z-index:10;
+	width:0;
+	background: #3FB7FC; /* fallback */
+	background:-moz-linear-gradient(top,#A0DCFF 50%,#3FB7FC 50%,#16A9FF 100%);
+	background:-webkit-linear-gradient(top,#A0DCFF 50%,#3FB7FC 50%,#16A9FF 100%);
+	background:-o-linear-gradient(top,#A0DCFF 50%,#3FB7FC 50%,#16A9FF 100%);
+	box-shadow:0 0 1px #fff;
+	-moz-box-shadow:0 0 1px #fff;
+	-webkit-box-shadow:0 0 1px #fff;
+}
+.startpoint{
+	z-index:12;
+	background: url(../img/leftpoint.png);
+	width:3px;
+	height:15px;
+	margin-bottom:4px;
+}
+
+.endpoint{
+	z-index:12;
+	width:3px;
+	height:15px;
+	background: url(../img/rightpoint.png);
+}
+.bufferBar{
+	z-index:5;
+	width:0;
+	background: #777;
+	background:-moz-linear-gradient(top,#999,#666);
+	background:-webkit-linear-gradient(top,#999,#666);
+	background:-o-linear-gradient(top,#999,#666);
+	box-shadow:2px 0 5px #333;
+	-moz-box-shadow:2px 0 5px #333;
+	-webkit-box-shadow:2px 0 5px #333;
+}
+/* time and duration */
+.time{
+	width:25%;
+	float:right;
+	text-align:center;
+	font-size:11px;
+	line-height:12px;
+}
+
+/* VOLUME BAR CSS */
+/* volume bar */
+.volume{
+	position:absolute;
+	cursor:pointer;
+	left:45%;
+	top:35%;
+	width:5%;
+	height:30%;
+	float:right;
+	margin-top:10px;
+	margin-right:10px;
+	opacity:0.7;
+    filter:alpha(opacity=70);
+    background:#000;
+	z-index:5;
+	display:none;
+}
+.volumeBar{
+	display:block;
+	width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;
+	background:url(../img/audiobg.png);
+	/* background-color:#eee; */
+	z-index:10;
+}
+
+/*快进快退样式*/
+.quickforwad{
+	position:absolute;
+	cursor:pointer;
+	left:28%;
+	top:35%;
+	z-index:20;
+	width: 44%;
+	height: 30%;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	background: url(../img/bg.png);
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	display:none;
+}
+.inpoint {
+	color:#4286E1;font-weight:bold; font-size:12px;
+	
+}
+.outpoint {
+	font-weight:bold; font-size:12px;color:#FFFfff;
+	
+}
+/**/
+
+/* OTHERS CSS */
+/* video screen cover */
+.loading, #init{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:url(../img/loading.gif) no-repeat 50% 50%;
+	z-index:2;
+	display:none;
+}
+#init{
+	background:url(../img/bigplay.png) no-repeat 50% 50% !important;
+	cursor:pointer;
+}
